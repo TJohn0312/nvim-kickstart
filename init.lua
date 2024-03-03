@@ -635,6 +635,7 @@ require('lazy').setup {
       -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
+        dependencies = { 'rafamadriz/friendly-snippets' },
         build = (function()
           -- Build Step is needed for regex support in snippets
           -- This step is not supported in many windows environments
@@ -830,3 +831,4 @@ require('lazy').setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+require('luasnip.loaders.from_vscode').lazy_load()
