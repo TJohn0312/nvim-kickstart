@@ -99,7 +99,7 @@ vim.g.maplocalleader = ' '
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -149,7 +149,12 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+-- See `:help vim.keymap.set()`
+-- jk to normal mode
+vim.keymap.set('v', 'jk', '<ESC>')
+vim.keymap.set('v', 'kj', '<ESC>')
+vim.keymap.set('!', 'jk', '<ESC>')
+vim.keymap.set('!', 'kj', '<ESC>')
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -730,6 +735,12 @@ require('lazy').setup {
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
+
+      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
     end,
   },
 
