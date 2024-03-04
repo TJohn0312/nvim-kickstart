@@ -10,10 +10,10 @@ return {
     end
     map('<leader>a', function()
       harpoon:list():append()
-    end)
+    end, { desc = 'harpoon add' })
     map('<leader>h', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'harpoon list' })
     map('<c-h><c-h>', function()
       harpoon:list():select(1)
     end)
