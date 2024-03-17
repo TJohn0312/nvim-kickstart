@@ -4,4 +4,11 @@
 -- See the kickstart.nvim README for more information
 return {
   'tpope/vim-fugitive',
+  'christoomey/vim-tmux-navigator',
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
 }
